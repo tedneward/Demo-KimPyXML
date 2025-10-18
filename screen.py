@@ -17,9 +17,8 @@ for d in os.listdir('./test'):
 
 # Recursive search
 def searchdir(directory):
-    print("Searching directory:", directory)
     for item in os.listdir(directory):
-        print("Examining item:", item)
+        print("Examining item:", directory, item)
         if os.path.isdir(item):
             searchdir(item)
         elif item.endswith('.xml'):
@@ -30,3 +29,5 @@ def searchdir(directory):
                 print(desc.text)
 
 searchdir('./test')
+
+
